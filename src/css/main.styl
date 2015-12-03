@@ -1,9 +1,9 @@
 @import nib
 global-reset()
 
-$body-color = #55557e
+$body-color = #000a96
 $body-bg-color = #fefefe
-$a-color = #55557e
+$a-color = #000a96
 $a-color-hover = #83a599
 $cta-border-color = #b1d7ca
 $cta-active-bg-color = #d8f2e9
@@ -54,6 +54,37 @@ body
   font-family Lato, sans-serif;
   font-size 14px
   line-height 1
+
+  transition font-size .5s, line-height .5s
+
+  section
+    &#all-in
+      h1
+        transition margin .5s
+    img
+      transition width .5s
+
+  &.font-off
+    font-size 0
+    line-height 0
+
+    &#font-toggle
+      background-position 0 0
+
+    &#impressum
+      font-size 1em
+      line-height 1
+
+    section img
+      width 100%
+
+    section#all-in
+      h1
+        margin 0
+
+      h3 span.border
+        border 0
+
 
 
 #wrapper
@@ -210,32 +241,3 @@ p
       display inline-block
     span.min
       display none
-
-/* transitions */
-
-body
-  transition font-size .5s, line-height .5s
-
-  section#all-in
-    h1
-      transition margin .5s
-
-  &.font-off
-    font-size 0
-    line-height 0
-
-    &#font-toggle
-      background-position 0 0
-
-    section img
-      width 100%
-
-    section#all-in
-      h1
-        margin 0
-
-      h3 span.border
-        border 0
-
-section img
-  transition width .5s
