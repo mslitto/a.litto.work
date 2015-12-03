@@ -1,0 +1,241 @@
+@import nib
+global-reset()
+
+$body-color = #55557e
+$body-bg-color = #fefefe
+$a-color = #55557e
+$a-color-hover = #83a599
+$cta-border-color = #b1d7ca
+$cta-active-bg-color = #d8f2e9
+
+@font-face
+  font-family Ubuntu
+  font-style normal
+  src url(/font/Ubuntu-C.woff)
+
+@font-face
+  font-family Ubuntu
+  font-style italic
+  src url(/font/Ubuntu-LI.woff)
+
+@font-face
+  font-family Lato
+  font-style normal
+  src url(/font/Lato-L.woff)
+
+/* sanity */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video
+  box-sizing border-box
+
+html,
+body
+  display inline-block
+  left 0
+  min-height 100%
+  position absolute
+  top 0
+  width 100%
+
+body
+  background-color $body-bg-color
+  color $body-color
+  font-family Lato, sans-serif;
+  font-size 14px
+  line-height 1
+
+
+#wrapper
+  max-width 1200px
+  margin 0 auto
+  position relative
+
+
+h1, h2, h3, h4, h5
+  color $a-color
+
+a
+  color $a-color
+  text-decoration none
+
+  &:hover
+    color $a-color-hover
+
+h1 
+  font-size 5.7em
+  margin -2em 0 0
+  text-transform uppercase
+
+  span.block
+    display block
+
+h2
+  font-size 3.4em
+  text-transform uppercase
+
+h3
+  font-size 1.7em
+
+header.menu
+  position fixed
+  right 2px
+  top 2px
+
+  button
+    float right
+    background-color transparent
+    height 36px
+    width 36px
+    background-size: cover
+    text-indent -20000px
+    border 0 none
+    background-position 100% 0
+
+    &:hover
+      background-position 0 0
+
+    &#font-toggle
+      background-image url(/img/ui/btn_font_toggle.png)
+
+header.image
+  max-width 100%
+  overflow-x hidden
+
+  img
+    width 100%
+    min-width 550px
+
+h1,
+h2,
+a
+  font-family Ubuntu, sans-serif
+
+h3
+  font-family Ubuntu, sans-serif;
+  font-style italic
+
+.margin-wrapper
+  margin 0 1em
+
+section
+  display inline-block
+  margin 0 0 50px
+
+  &:nth-child(2n)
+    img,
+    div
+      float right
+      text-align right
+
+  &#all-in
+    h3
+      span.border
+        display block
+        width 30%
+        text-align left
+        border 1px solid
+        margin 1em 0
+
+  img,
+  div
+    float left
+    text-align left
+
+  img
+    width 75%
+
+  > div
+    max-width 75%
+    clear both
+
+    div
+      font-family Lato, sans-serif;
+
+  img
+    margin 0 0 25px
+
+  h2
+    margin 0
+
+  h3
+    margin 0 0 17px
+    line-height 1.2
+
+p
+  &.riot-art
+    cursor pointer
+    padding 1em
+    border 1px solid $cta-border-color
+    text-align center
+    display inline-block
+    margin 1em 0 0
+
+    &:hover
+      background-color $cta-active-bg-color
+
+      a
+        color $body-color
+
+    a
+      color $cta-border-color
+
+  &.fotos
+    margin 1em 0
+
+@media (min-width 800px)
+  section
+    img
+      width 65%
+    > div
+      width 25%
+      margin 0 2.5% 0
+      clear none
+
+@media only screen and (orientation:landscape) and (max-width 600px)
+  h1
+    margin -1em 0 0
+
+    span.block
+      display inline-block
+    span.min
+      display none
+
+/* transitions */
+
+body
+  transition font-size .5s, line-height .5s
+
+  section#all-in
+    h1
+      transition margin .5s
+
+  &.font-off
+    font-size 0
+    line-height 0
+
+    &#font-toggle
+      background-position 0 0
+
+    section img
+      width 100%
+
+    section#all-in
+      h1
+        margin 0
+
+      h3 span.border
+        border 0
+
+section img
+  transition width .5s
