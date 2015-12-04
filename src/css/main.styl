@@ -68,6 +68,10 @@ body
     font-size 0
     line-height 0
 
+    header.image
+      height 0
+      opacity 0
+
     &#font-toggle
       background-position 0 0
 
@@ -85,13 +89,10 @@ body
       h3 span.border
         border 0
 
-
-
 #wrapper
   max-width 1200px
   margin 0 auto
   position relative
-
 
 h1, h2, h3, h4, h5
   color $a-color
@@ -118,7 +119,13 @@ h2
 h3
   font-size 1.7em
 
-header.menu
+h4
+  font-size 1em
+  font-family Ubuntu
+  font-style italic
+  margin 1em 0 .3em
+
+footer.menu
   position fixed
   right 2px
   top 2px
@@ -126,8 +133,8 @@ header.menu
   button
     float right
     background-color transparent
-    height 36px
-    width 36px
+    height 25px
+    width 25px
     background-size: cover
     text-indent -20000px
     border 0 none
@@ -142,6 +149,7 @@ header.menu
 header.image
   max-width 100%
   overflow-x hidden
+  transition height .5s, opacity .5s
 
   img
     width 100%
@@ -162,6 +170,7 @@ h3
 section
   display inline-block
   margin 0 0 50px
+  width 100%
 
   &:nth-child(2n)
     img,
@@ -178,6 +187,10 @@ section
         border 1px solid
         margin 1em 0
 
+  &#work-in-progress
+    img
+      margin 0
+
   img,
   div
     float left
@@ -185,6 +198,7 @@ section
 
   img
     width 75%
+    margin 0 0 25px
 
   > div
     max-width 75%
@@ -192,9 +206,6 @@ section
 
     div
       font-family Lato, sans-serif;
-
-  img
-    margin 0 0 25px
 
   h2
     margin 0
@@ -223,6 +234,40 @@ p
 
   &.fotos
     margin 1em 0
+
+#impressum
+  width 66%
+  float left
+  text-align right
+  line-height 1.1
+
+section#studies
+  > div
+    width auto
+    margin 0
+
+  div.imgs
+    float none
+    width 100%
+    display inline-block
+    max-width 100%
+
+  img
+    width 100%
+
+section#work-in-progress
+  > div
+    width auto
+    margin 0
+
+  img
+    width 100%
+
+footer.main
+  clear both
+  width 100%
+  text-align center
+  margin 0 0 .5em
 
 @media (min-width 800px)
   section

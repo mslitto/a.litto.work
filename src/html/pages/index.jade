@@ -2,7 +2,7 @@ extends ../layout
 
 mixin imre-copy()
   p.fotos
-    span Fotos by&nbsp;
+    span Photos by&nbsp;
     a(href='') Imre Antal
 
 mixin riot-art(url)
@@ -17,9 +17,6 @@ block header-image
     img(src="/img/catalogue/header-image.jpg")
 
 block content
-  header.menu
-    button#font-toggle remove font
-
   div.margin-wrapper
     section#all-in
       h1
@@ -64,7 +61,7 @@ block content
           +imre-copy()
 
     section#move
-      img(src="/img/catalogue/03_move.png")
+      img(src="/img/catalogue/03_move.jpg")
       div
         h2 Move
         h3 Those who move feel the rope
@@ -79,7 +76,7 @@ block content
 
 
     section#sin-carne
-      img(src="/img/catalogue/04_sin_carne.png")
+      img(src="/img/catalogue/04_sin_carne.jpg")
       div
         h2 Sin carne
         h3 à la carte
@@ -114,7 +111,7 @@ block content
           p.date 2015
 
     section#all-out
-      img(src="/img/catalogue/07_allout.png")
+      img(src="/img/catalogue/07_all_out.jpg")
       div
         h2 All out
         h3 …
@@ -124,8 +121,48 @@ block content
           p.description synthetic polymer on canvas
           p.date 2015
 
-  section#work-in-progress
-    h2 WORK IN PROGRESS
+    section#work-in-progress
+      div
+        h3 work in progress
 
-  section#studies
-    h2 STUDIES
+        img(src="/img/wip/work_in_progress.gif")
+
+    section#studies
+      div
+        h3 Studies
+
+        div.imgs
+          img(src="/img/studies/01_glitch.jpg")
+          img(src="/img/studies/03_glitch.jpg")
+          img(src="/img/studies/04_glitch.jpg")
+          img(src="/img/studies/05_glitch.jpg")
+          img(src="/img/studies/06_glitch.jpg")
+          img(src="/img/studies/07_glitch.jpg")
+          img(src="/img/studies/08_glitch.jpg")
+          img(src="/img/studies/09_glitch.jpg")
+          img(src="/img/studies/10_glitch.jpg")
+          img(src="/img/studies/11_glitch.jpg")
+
+  section#impressum
+    h3 Impressum
+
+    h4 Expanding Borders
+
+    h4 Location
+    p Schwelle 7
+    p Rotenlöwengasse 12 2+3
+    p 1090 Wien
+
+    h4 Artist
+    p Mag. Daniela Weiss
+
+    h4 Photography
+    p Imre Antal
+
+    h4 Programming
+    p Jascha Ehrenreich
+
+  footer.main
+    div.copy
+      span &copy; 2015&nbsp;
+      a(href="http://www.litto.work" target="utopia") Litto, Daniela Weiss
