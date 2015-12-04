@@ -1,24 +1,28 @@
 extends ../layout
 
+mixin imre-link()
+  a(href='http://imreantal.com'
+    target='_blank') Imre Antal
+
 mixin imre-copy()
   p.fotos
     span Photos by&nbsp;
-    a(href='') Imre Antal
+    +imre-link()
 
 mixin riot-art(url)
   p.riot-art
-    a(href=url target='utopia') buy on riot art
+    a(href=url target='_blank') buy on riot art
 
 block title
   title litto.work - catalog
 
 block header-image
   header.image
-    img(src="/img/catalogue/header-image.jpg")
+    img(src='/img/catalogue/header-image.jpg')
 
 block content
   div.margin-wrapper
-    section#all-in
+    section#header
       h1
         span EXPAND
         span.min -
@@ -35,89 +39,90 @@ block content
         span.border
 
     section#all-in
-      img(src="/img/catalogue/01_all_in.jpg")
+      img(src='/img/catalogue/01_all_in.jpg')
       div
         h2 ALL IN
         h3 my self / alter ego
 
         div
-          p.dimensions 150cm x 130cm
+          p.dimensions 150 x 130cm
           p.description synthetic polymer on canvas
           p.date 2015
           +riot-art('http://www.riotart.co/shop/all-in-litto')
           +imre-copy()
 
     section#no-enemy-within
-      img(src="/img/catalogue/02_no_enemy_within.jpg")
+      img(src='/img/catalogue/02_no_enemy_within.jpg')
       div
         h2 NO ENEMY
         h3 within
 
         div
-          p.dimensions 130cm x 150cm
+          p.dimensions 130 x 150cm
           p.description synthetic polymer on canvas
           p.date 2015
 
           +imre-copy()
 
     section#move
-      img(src="/img/catalogue/03_move.jpg")
+      img(src='/img/catalogue/03_move.jpg')
       div
         h2 Move
-        h3 Those who move feel the rope
+        h3
+          | Those who move
+          br
+          | feel the rope
 
         div
-          p.dimensions 150cm x 130cm
+          p.dimensions 150 x 130cm
           p.description synthetic polymer on canvas
           p.date 2015
 
           +imre-copy()
 
-
-
     section#sin-carne
-      img(src="/img/catalogue/04_sin_carne.jpg")
+      img(src='/img/catalogue/04_sin_carne.jpg')
       div
         h2 Sin carne
         h3 à la carte
 
         div
-          p.dimensions 100cm x 120cm
+          p.dimensions 100 x 120cm
           p.description synthetic polymer on canvas
           p.date 2015
 
     section#reduced
-      img(src="/img/catalogue/05_reduced.jpg")
+      img(src='/img/catalogue/05_reduced.jpg')
       div
         h2 Reduced
         h3 &nbsp;&#8722;&nbsp;
 
         div
-          p.dimensions 130cm x 150cm
+          p.dimensions 130 x 150cm
           p.description synthetic polymer on canvas
           p.date 2015
 
           +riot-art('http://www.riotart.co/shop/reduced-litto')
 
     section#the-man-who-sold-the-world
-      img(src="/img/catalogue/06_the_man_who_sold_the_world.jpg")
+      img(src='/img/catalogue/06_the_man_who_sold_the_world.jpg')
       div
         h2 The man who sold the world
-        h3 inspired by Kurt
+        h3 inspired by Kurt C.
 
         div
-          p.dimensions 130cm x 150cm
+          p.dimensions 130 x 150cm
           p.description synthetic polymer on canvas
           p.date 2015
 
     section#all-out
-      img(src="/img/catalogue/07_all_out.jpg")
+      img(src='/img/catalogue/07_all_out.jpg')
       div
         h2 All out
         h3 …
 
         div
-          p.dimensions 100cm x 80cm
+          p.dimensions 100 x 80cm
           p.description synthetic polymer on canvas
           p.date 2015
 
@@ -125,23 +130,24 @@ block content
       div
         h3 work in progress
 
-        img(src="/img/wip/work_in_progress.gif")
+        img(src='/img/wip/work_in_progress.gif')
 
     section#studies
       div
         h3 Studies
 
         div.imgs
-          img(src="/img/studies/01_glitch.jpg")
-          img(src="/img/studies/03_glitch.jpg")
-          img(src="/img/studies/04_glitch.jpg")
-          img(src="/img/studies/05_glitch.jpg")
-          img(src="/img/studies/06_glitch.jpg")
-          img(src="/img/studies/07_glitch.jpg")
-          img(src="/img/studies/08_glitch.jpg")
-          img(src="/img/studies/09_glitch.jpg")
-          img(src="/img/studies/10_glitch.jpg")
-          img(src="/img/studies/11_glitch.jpg")
+          img(src='/img/studies/01_glitch.jpg')
+          img(src='/img/studies/02_glitch.jpg')
+          img(src='/img/studies/03_glitch.jpg')
+          img(src='/img/studies/04_glitch.jpg')
+          img(src='/img/studies/05_glitch.jpg')
+          img(src='/img/studies/06_glitch.jpg')
+          img(src='/img/studies/07_glitch.jpg')
+          img(src='/img/studies/08_glitch.jpg')
+          img(src='/img/studies/09_glitch.jpg')
+          img(src='/img/studies/10_glitch.jpg')
+          img(src='/img/studies/11_glitch.jpg')
 
   section#impressum
     h3 Impressum
@@ -157,7 +163,8 @@ block content
     p Mag. Daniela Weiss
 
     h4 Photography
-    p Imre Antal
+    p
+      +imre-link()
 
     h4 Programming
     p Jascha Ehrenreich
@@ -165,4 +172,4 @@ block content
   footer.main
     div.copy
       span &copy; 2015&nbsp;
-      a(href="http://www.litto.work" target="utopia") Litto, Daniela Weiss
+      a(href='http://www.litto.work' target='utopia') Litto, Daniela Weiss
