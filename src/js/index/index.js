@@ -1,17 +1,12 @@
 let d = document;
 let b = d.body;
-let fontBtn = d.createElement('button');
+let mC = d.createElement('header');
+mC.id = 'menu';
+let fB = d.createElement('button');
 let fClass = 'font-off';
-fontBtn.id = 'font-toggle';
-
-fontBtn.addEventListener('click', evt => {
-  if (b.className.indexOf(fClass) > -1) {
-    b.className.replace(fClass, '');
-  } else {
-    b.className = b.className + ' ' + fClass;
-  }
-
+fB.id = 'font-toggle';
+fB.addEventListener('click', evt => {
   b.classList.toggle(fClass);
 });
-
-b.appendChild(fontBtn);
+mC.appendChild(fB);
+b.appendChild(mC);
